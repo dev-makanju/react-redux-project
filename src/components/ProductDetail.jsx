@@ -5,12 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectedProducts , removeSelectedProducts } from "../redux/actions/productActions";
 
 const ProductDetail = () => {
-   const product = useSelector( (state) => state.product );
+   const product = useSelector( (state) => state.product.product );
    const { image , title , price , category , description } = product;
    const { productId } = useParams();
-   console.log(product.payload)
    const dispatch = useDispatch();
-
    const getSingleProduct = async() => {
       try{
          const response = await axios.get(`https://fakestoreapi.com/products/${productId}`)

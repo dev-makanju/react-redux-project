@@ -14,7 +14,6 @@ const ProductListing = () => {
    const getProducts = async () => {
       try{
          const response = await axios.get("https://fakestoreapi.com/products")
-
          if(response.status){
             dispatch(setProducts(response.data))
          }
